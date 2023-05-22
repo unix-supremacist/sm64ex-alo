@@ -694,6 +694,10 @@ s32 act_long_jump(struct MarioState *m) {
         m->actionState = 1;
     }
 
+	if (m->input & INPUT_Z_PRESSED) {
+        return set_mario_action(m, ACT_GROUND_POUND, 0);
+    }
+
     common_air_action_step(m, ACT_LONG_JUMP_LAND, animation, AIR_STEP_CHECK_LEDGE_GRAB);
 #ifdef RUMBLE_FEEDBACK
     if (m->action == ACT_LONG_JUMP_LAND) {
@@ -1010,6 +1014,13 @@ s32 act_ground_pound(struct MarioState *m) {
             play_sound(SOUND_MARIO_GROUND_POUND_WAH, m->marioObj->header.gfx.cameraToObject);
             m->actionState = 1;
         }
+
+		if (m->input & INPUT_B_PRESSED) {
+            mario_set_forward_vel(m, 7.0f);
+            m->vel[1] = 30;
+        	m->faceAngle[1] = atan2s(-m->controller->stickY, m->controller->stickX) + m->area->camera->yaw;
+            set_mario_action(m, ACT_DIVE, 0);
+        }
     } else {
         set_mario_animation(m, MARIO_ANIM_GROUND_POUND);
 
@@ -1046,6 +1057,14 @@ s32 act_ground_pound(struct MarioState *m) {
             set_mario_action(m, ACT_BACKWARD_AIR_KB, 0);
         }
 #endif
+        else {
+			if (m->input & INPUT_B_PRESSED) {
+        	    mario_set_forward_vel(m, 7.0f);
+        	    m->vel[1] = 30;
+        		m->faceAngle[1] = atan2s(-m->controller->stickY, m->controller->stickX) + m->area->camera->yaw;
+        	    set_mario_action(m, ACT_DIVE, 0);
+        	}
+		}
     }
 
     return FALSE;

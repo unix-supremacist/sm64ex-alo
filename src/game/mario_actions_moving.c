@@ -170,7 +170,7 @@ void slide_bonk(struct MarioState *m, u32 fastAction, u32 slowAction) {
 s32 set_triple_jump_action(struct MarioState *m, UNUSED u32 action, UNUSED u32 actionArg) {
     if (m->flags & MARIO_WING_CAP) {
         return set_mario_action(m, ACT_FLYING_TRIPLE_JUMP, 0);
-    } else if (m->forwardVel > 20.0f) {
+    } else if (m->forwardVel > 10.0f) {
         return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
     } else {
         return set_mario_action(m, ACT_JUMP, 0);
@@ -483,14 +483,14 @@ void update_walking_speed(struct MarioState *m) {
     }
 
     if (m->forwardVel <= 0.0f) {
-        m->forwardVel += 1.1f;
+        m->forwardVel += 2.2f; //make movement more like
     } else if (m->forwardVel <= targetSpeed) {
 #if FIX_INITIAL_WALKING_SPEED
         if (m->forwardVel <= 8.0f && !mario_floor_is_slope(m)) {
             m->forwardVel = MIN(m->intendedMag, 8.0f);
         }
 #endif
-        m->forwardVel += 1.1f - m->forwardVel / 43.0f;
+        m->forwardVel += 2.2f - m->forwardVel / 43.0f;
     } else if (m->floor->normal.y >= 0.95f) {
         m->forwardVel -= 1.0f;
     }
@@ -1648,7 +1648,7 @@ s32 act_hold_stomach_slide(struct MarioState *m) {
 }
 
 s32 act_dive_slide(struct MarioState *m) {
-    if ((m->input & (INPUT_A_PRESSED | INPUT_B_PRESSED)) &&
+    if ((m->input & (INPUT_A_PRESSED)) &&
 #if DIVE_SLIDE_ROLLOUT
         (m->forwardVel > -8.0f)
 #else
@@ -1659,6 +1659,11 @@ s32 act_dive_slide(struct MarioState *m) {
         queue_rumble_data(5, 80);
 #endif
         return set_mario_action(m, m->forwardVel > 0.0f ? ACT_FORWARD_ROLLOUT : ACT_BACKWARD_ROLLOUT, 0);
+    }
+	
+	if (!(m->input & INPUT_ABOVE_SLIDE) && (m->input & INPUT_B_PRESSED)) {
+        m->vel[1] = 16.0f;
+        return set_mario_action(m, ACT_DIVE, 1);
     }
 
     play_mario_landing_sound_once(m, SOUND_ACTION_TERRAIN_BODY_HIT_GROUND);

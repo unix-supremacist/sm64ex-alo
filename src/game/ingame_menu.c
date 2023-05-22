@@ -2541,14 +2541,6 @@ void print_animated_red_coin(s16 x, s16 y) {
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
 }
 
-void render_pause_red_coins(void) {
-    s8 x;
-
-    for (x = 0; x < gRedCoinsCollected; x++) {
-        print_animated_red_coin(GFX_DIMENSIONS_FROM_RIGHT_EDGE(30) - x * 20, 16);
-    }
-}
-
 #ifdef VERSION_EU
 u8 gTextCourse[][7] = {
     { TEXT_COURSE },
@@ -3079,7 +3071,13 @@ s16 render_pause_screen(void) {
             render_pause_my_score_coins();
             render_pause_red_coins();
 
-            if (should_render_pause_options(gMarioState)) {
+#if !EXIT_COURSE_ANYWHERE
+/* Added support for the "Exit course at any time" cheat */
+            if ((gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) 
+#ifdef CHEATS_ACTIONS
+                || (Cheats.EnableCheats && Cheats.ExitAnywhere)
+#endif
+                ) {
                 render_pause_course_options(99, 93, &gMenuLineNum, 15);
             }
 

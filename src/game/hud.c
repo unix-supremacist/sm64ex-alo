@@ -130,6 +130,13 @@ void render_power_meter_health_segment(s16 numHealthWedges) {
     gSP1Triangle(gDisplayListHead++, 0, 2, 3, 0);
 }
 
+void render_hud_red_coins(void) {
+	u8 i;
+	for (i = 0; i != gRedCoinsCollected; i++){
+		print_animated_red_coin(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), 16);
+	}
+}
+
 /**
  * Renders power meter display lists.
  * That includes the "POWER" base and the colored health segment textures.
@@ -495,6 +502,7 @@ void render_hud(void) {
 #if SHOW_COINS
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
             render_hud_coins();
+			render_hud_red_coins();
         }
 #endif
 #if SHOW_STARS

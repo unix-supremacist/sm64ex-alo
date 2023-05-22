@@ -289,11 +289,12 @@ enum LevelCommandsIDList {
     CMD_W(unk8)
 
 #define OBJECT_WITH_ACTS(model, posX, posY, posZ, angleX, angleY, angleZ, bhvParam, bhv, acts) \
-    CMD_BBBB(LVL_SCRIPT_CMD_24, 0x1C, acts, 0x00), \
+    CMD_BBBB(LVL_SCRIPT_CMD_24, 0x20, 0x00, 0x00), \
     CMD_HHHHHH(posX, posY, posZ, angleX, angleY, angleZ), \
     CMD_W(bhvParam), \
     CMD_PTR(bhv), \
-    CMD_W(model)
+    CMD_W(model), \
+    CMD_W(acts)
 
 #define OBJECT(model, posX, posY, posZ, angleX, angleY, angleZ, bhvParam, bhv) \
     OBJECT_WITH_ACTS(model, posX, posY, posZ, angleX, angleY, angleZ, bhvParam, bhv, 0x1F)

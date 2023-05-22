@@ -1,4 +1,5 @@
 // spawn_star.inc.c
+#include "star_config.h"
 
 static struct ObjectHitbox sCollectStarHitbox = {
     /* interactType:      */ INTERACT_STAR_OR_KEY,
@@ -14,7 +15,7 @@ static struct ObjectHitbox sCollectStarHitbox = {
 
 void bhv_collect_star_init(void) {
     u8 starIndex = (o->oBhvParams >> 24) & 0xFF;
-    u8 currentLevelStarFlags = save_file_get_star_flags(gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum));
+    startype currentLevelStarFlags = save_file_get_star_flags(gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum));
 
     if (currentLevelStarFlags & (1 << starIndex)) {
         o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_TRANSPARENT_STAR];

@@ -23,6 +23,7 @@
 #include "text_strings.h"
 #include "types.h"
 #include "macros.h"
+#include "star_config.h"
 
 #ifdef VERSION_EU
 #undef LANGUAGE_FUNCTION
@@ -2612,7 +2613,7 @@ void render_pause_my_score_coins(void) {
     void **actNameTbl;
     u8 *actName;
     u8 courseIndex;
-    u8 starFlags;
+    startype starFlags;
 
 #ifndef VERSION_EU
     courseNameTbl = segmented_to_virtual(seg2_course_name_table);
@@ -2672,7 +2673,7 @@ void render_pause_my_score_coins(void) {
             print_generic_string(TXT_STAR_X, 140, textUnfilledStar);
         }
 
-        print_generic_string(ACT_NAME_X, 140, actName);
+        //print_generic_string(ACT_NAME_X, 140, actName);
 #ifndef VERSION_JP
         print_generic_string(CRS_NAME_X, 157, &courseName[CRS_NAME_START]);
     } else {
@@ -2867,25 +2868,21 @@ void print_hud_pause_colorful_str(void) {
 void render_pause_castle_course_stars(s16 x, s16 y, s16 fileIndex, s16 courseIndex) {
     s16 hasStar = 0;
 
-#ifdef VERSION_CN
-    u8 str[60];
-#else
-    u8 str[30];
-#endif
+    u8 str[128];
 
     u8 textStar[] = { TEXT_STAR };
 
-    u8 starFlags = save_file_get_star_flags(fileIndex, courseIndex);
+    startype starFlags = save_file_get_star_flags(fileIndex, courseIndex);
     u16 starCount = save_file_get_course_star_count(fileIndex, courseIndex);
 
     u16 nextStar = 0;
 
-    if (starFlags & (1 << 6)) {
+    if (starFlags & (1 << (STAR_COUNT-1))) {
         starCount--;
         print_generic_string(x + 89, y - 5, textStar);
     }
 
-    while (hasStar != starCount) {
+    while (hasStar != MIN(starCount, 32)) {
         if (starFlags & (1 << nextStar)) {
 #ifdef VERSION_CN
             str[nextStar * 4] = 0x00;
@@ -2912,7 +2909,7 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileIndex, s16 courseInd
         nextStar++;
     }
 
-    if (starCount == nextStar && starCount != 6) {
+    if (starCount == nextStar && starCount != STAR_COUNT-1) {
 #ifdef VERSION_CN
         str[nextStar * 4] = DIALOG_CHAR_SPECIAL_MODIFIER;
         str[nextStar * 4 + 1] = DIALOG_CHAR_SLASH; //! Meant to be DIALOG_CHAR_STAR_OPEN?

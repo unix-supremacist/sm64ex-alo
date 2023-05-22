@@ -5,13 +5,14 @@
 
 #include "types.h"
 #include "area.h"
+#include "star_config.h"
 
 #include "course_table.h"
 
 #define MENU_DATA_MAGIC 0x4849
 #define SAVE_FILE_MAGIC 0x4441
 
-#define NUM_SAVE_FILES 4
+#define NUM_SAVE_FILES 1
 
 // Support both types of endianness on PC Port (little and big)
 #ifndef TARGET_N64
@@ -36,7 +37,7 @@ struct SaveFile {
     // Star flags for each course.
     // The most significant bit of the byte *following* each course is set if the
     // cannon is open.
-    u8 courseStars[COURSE_COUNT];
+    startype courseStars[COURSE_COUNT];
 
     u8 courseCoinScores[COURSE_STAGES_COUNT];
 

@@ -594,10 +594,10 @@ u32 save_file_get_max_coin_score(s32 courseIndex) {
 s32 save_file_get_course_star_count(s32 fileIndex, s32 courseIndex) {
     s32 i;
     s32 count = 0;
-    u8 flag = 1;
-    u8 starFlags = save_file_get_star_flags(fileIndex, courseIndex);
+    startype flag = 1;
+    startype starFlags = save_file_get_star_flags(fileIndex, courseIndex);
 
-    for (i = 0; i < (STAR_INDEX_100_COINS + 1); i++, flag <<= 1) {
+    for (i = 0; i < STAR_COUNT; i++, flag <<= 1) {
         if (starFlags & flag) {
             count++;
         }
@@ -645,7 +645,7 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     if (courseIndex == COURSE_NUM_TO_INDEX(COURSE_NONE)) {
         starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
     } else {
-        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & 0x7F;
+        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & STAR_MASK;
     }
 
     return starFlags;
@@ -678,14 +678,14 @@ u32 save_file_get_cannon_flags(s32 fileIndex, s32 courseIndex) {
  * Return TRUE if the cannon is unlocked in the current course.
  */
 s32 save_file_is_cannon_unlocked(void) {
-    return (gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] & (1 << 7)) != 0;
+    return (gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] & (1 << STAR_COUNT)) != 0;
 }
 
 /**
  * Sets the cannon status to unlocked in the current course.
  */
 void save_file_set_cannon_unlocked(void) {
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] |= (1 << 7);
+    gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] |= (1 << STAR_COUNT);
     gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags |= SAVE_FLAG_FILE_EXISTS;
     gSaveFileModified = TRUE;
 }

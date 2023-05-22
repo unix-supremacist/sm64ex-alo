@@ -7,6 +7,8 @@
 #define ACT_4 (1 << 3)
 #define ACT_5 (1 << 4)
 #define ACT_6 (1 << 5)
+#define ACT_7 (1 << 6)
+#define ACT_8 (1 << 7)
 
 // If an object is set as active for the first 5 acts only, it is treated as always active.
 // It's possible that there were only planned to be 5 acts per level early in development.

@@ -658,12 +658,13 @@ s32 act_ledge_grab(struct MarioState *m) {
         m->actionTimer++;
     }
 
+#ifdef TODO_LEDGEGRAB_IFDEF
     // ex-alo change
     // added floor null check to avoid crashes
     if ((m->floor == NULL) || (m->floor->normal.y < 0.9063078f)) {
         return let_go_of_ledge(m);
     }
-
+#endif
     if (m->input & (INPUT_Z_PRESSED | INPUT_OFF_FLOOR)) {
         return let_go_of_ledge(m);
     }

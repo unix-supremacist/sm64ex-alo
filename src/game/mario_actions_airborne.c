@@ -718,7 +718,7 @@ s32 act_long_jump(struct MarioState *m) {
         m->actionState = 1;
     }
 
-    if (m->input & INPUT_Z_PRESSED) {
+	if (m->input & INPUT_Z_PRESSED) {
         return set_mario_action(m, ACT_GROUND_POUND, 0);
     }
 
@@ -1049,9 +1049,10 @@ s32 act_ground_pound(struct MarioState *m) {
             m->actionState = 1;
         }
 
-        if (m->input & INPUT_B_PRESSED) {
-            mario_set_forward_vel(m, 10.0f);
-            m->vel[1] = 35;
+		if (m->input & INPUT_B_PRESSED) {
+            mario_set_forward_vel(m, 7.0f);
+            m->vel[1] = 30;
+        	m->faceAngle[1] = atan2s(-m->controller->stickY, m->controller->stickX) + m->area->camera->yaw;
             set_mario_action(m, ACT_DIVE, 0);
         }
     } else {
@@ -1096,6 +1097,14 @@ s32 act_ground_pound(struct MarioState *m) {
             }
         }
 #endif
+        else {
+			if (m->input & INPUT_B_PRESSED) {
+        	    mario_set_forward_vel(m, 7.0f);
+        	    m->vel[1] = 30;
+        		m->faceAngle[1] = atan2s(-m->controller->stickY, m->controller->stickX) + m->area->camera->yaw;
+        	    set_mario_action(m, ACT_DIVE, 0);
+        	}
+		}
     }
 
     return FALSE;

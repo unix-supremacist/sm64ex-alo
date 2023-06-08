@@ -483,14 +483,14 @@ void update_walking_speed(struct MarioState *m) {
     }
 
     if (m->forwardVel <= 0.0f) {
-        m->forwardVel += 2.2f; //make movement more like
+        m->forwardVel += 1.5f;
     } else if (m->forwardVel <= targetSpeed) {
 #if FIX_INITIAL_WALKING_SPEED
         if (m->forwardVel <= 8.0f && !mario_floor_is_slope(m)) {
             m->forwardVel = MIN(m->intendedMag, 8.0f);
         }
 #endif
-        m->forwardVel += 2.2f - m->forwardVel / 43.0f;
+        m->forwardVel += 1.7f - m->forwardVel / 43.0f;
     } else if (m->floor->normal.y >= 0.95f) {
         m->forwardVel -= 1.0f;
     }

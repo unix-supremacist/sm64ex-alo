@@ -43,5 +43,10 @@ const MacroObject wf_seg7_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_breakable_box_small,         /*yaw*/   0, /*pos*/  4320,   256,  1880),
     MACRO_OBJECT               (/*preset*/ macro_breakable_box_small,         /*yaw*/   0, /*pos*/ -2940,   384, -1320),
     MACRO_OBJECT               (/*preset*/ macro_butterfly_triplet_no_bombs,  /*yaw*/   0, /*pos*/  4574,   300,  1130),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  1822,  2560,  -101),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  689,  2560,  1845),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  4625,  256,  5017),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  4574,  300,  1130),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  4611,  256,  141),
     MACRO_OBJECT_END(),
 };

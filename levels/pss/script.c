@@ -30,6 +30,12 @@ const LevelScript level_pss_entry[] = {
 
     AREA(/*index*/ 1, pss_geo_000100),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 5632, 6751, -5631, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
+		OBJECT(/*model*/ MODEL_STAR,/*pos*/  6072, 7381, -5732, /*angle*/ 0, 0, 0,    /*behParam*/ 0x02000000, /*beh*/ bhvStar),
+		OBJECT(/*model*/ MODEL_STAR,/*pos*/  358, -1169, -5030, /*angle*/ 0, 0, 0,    /*behParam*/ 0x03000000, /*beh*/ bhvStar),
+		OBJECT(/*model*/ MODEL_STAR,/*pos*/  -2517, -2669, -4939, /*angle*/ 0, 0, 0,    /*behParam*/ 0x04000000, /*beh*/ bhvStar),
+		OBJECT(/*model*/ MODEL_STAR,/*pos*/  -4752, -2819, -2988, /*angle*/ 0, 0, 0,    /*behParam*/ 0x05000000, /*beh*/ bhvStar),
+		OBJECT(/*model*/ MODEL_NONE,/*pos*/ -5552, -4229,  4766, /*angle*/ 0, 0, 0,    /*behParam*/ 0x06000000, /*beh*/ bhvHiddenRedCoinStar),
+    	OBJECT(/*model*/ MODEL_NONE,/*pos*/ -7196, -4229,  4519, /*angle*/ 0, 0, 0,    /*behParam*/ 0x07040000, /*beh*/ bhvHiddenStar),
         WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_PSS,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_WARP_FLOOR, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_20, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS,    /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_26, /*flags*/ WARP_NO_CHECKPOINT),

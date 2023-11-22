@@ -27,6 +27,7 @@ static const LevelScript script_func_local_2[] = {
     OBJECT          (/*model*/ MODEL_MR_BLIZZARD,      /*pos*/ -2376, -1589,  4256, /*angle*/ 0, 252, 0, /*bhvParam*/ BPARAM2(MR_BLIZZARD_STYPE_JUMPING), /*bhv*/ bhvMrBlizzard),
     OBJECT          (/*model*/ MODEL_MR_BLIZZARD,      /*pos*/  -394, -1589,  4878, /*angle*/ 0,  74, 0, /*bhvParam*/ BPARAM2(MR_BLIZZARD_STYPE_JUMPING), /*bhv*/ bhvMrBlizzard),
     OBJECT_WITH_ACTS(/*model*/ MODEL_CCM_SNOWMAN_BASE, /*pos*/  2560,  2662, -1122, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvSnowmansBottom, /*acts*/ ACT_5),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,             /*pos*/  -700,  3500,   500, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x0E000000, /*bhv*/ bhvStar, /*acts*/ ALL_ACTS),
     RETURN(),
 };
 
@@ -36,6 +37,9 @@ static const LevelScript script_func_local_3[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,             /*pos*/  4200,  -927,   400, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_4), /*bhv*/ bhvHiddenRedCoinStar,   /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_CCM_SNOWMAN_HEAD, /*pos*/ -4230, -1169,  1813, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5), /*bhv*/ bhvSnowmansHead,          /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,             /*pos*/ -2000, -2200, -3000, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_6), /*bhv*/ bhvStar,                   /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/ -4500, -5500,  0, /*angle*/ 0, 0, 0,    /*behParam*/ 0x0B000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/ -1220, -3200,  5969, /*angle*/ 0, 0, 0,    /*behParam*/ 0x0C000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/ -1220, -3400,  4000, /*angle*/ 0, 0, 0,    /*behParam*/ 0x0D000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
     RETURN(),
 };
 
@@ -43,6 +47,11 @@ static const LevelScript script_func_local_4[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_PENGUIN, /*pos*/ -4952,  6656, -6075, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_3) | BPARAM2(RACING_PENGUIN_BP_THIN), /*bhv*/ bhvRacingPenguin,   /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT          (/*model*/ MODEL_NONE,    /*pos*/ -6500, -5836, -6400, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvPenguinRaceFinishLine),
     OBJECT          (/*model*/ MODEL_NONE,    /*pos*/ -6393,  -716,  7503, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvPenguinRaceShortcutCheck),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/  -6400, -1300,  3800, /*angle*/ 0, 0, 0,    /*behParam*/ 0x06000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/  -5600, -4200, -6644, /*angle*/ 0, 0, 0,    /*behParam*/ 0x07000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/  -6000, -5300, -4000, /*angle*/ 0, 0, 0,    /*behParam*/ 0x08000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/  -5000,  6600, -5000, /*angle*/ 0, 0, 0,    /*behParam*/ 0x09000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,/*pos*/  0,  4000, -3000, /*angle*/ 0, 0, 0,    /*behParam*/ 0x0A000000, /*beh*/ bhvStar, /*acts*/ ALL_ACTS),
 #ifndef VERSION_JP
     OBJECT          (/*model*/ MODEL_NONE,    /*pos*/ -4943,  1321,   667, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvPlaysMusicTrackWhenTouched),
 #endif

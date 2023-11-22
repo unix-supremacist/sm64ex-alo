@@ -62,5 +62,10 @@ const MacroObject jrb_seg7_area_1_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_koopa_shell_underwater,      /*yaw*/   0, /*pos*/ -1480, -1000,  4820),
     MACRO_OBJECT               (/*preset*/ macro_clam_shell,                  /*yaw*/ 180, /*pos*/ -1480, -1040,  4820),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/  5290, -2966, -4740, /*bhvParam*/ DIALOG_169),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -6549,  1600,  4343),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -7481,  1600,  185),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -5749,  1600,  -1113),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -3978,  1600,  -85),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -5332,  1600,  1023),
     MACRO_OBJECT_END(),
 };

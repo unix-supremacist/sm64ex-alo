@@ -84,5 +84,10 @@ const MacroObject hmc_seg7_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_fire_spitter,                /*yaw*/   0, /*pos*/  1420,  -380, -7040),
     MACRO_OBJECT               (/*preset*/ macro_fire_spitter,                /*yaw*/   0, /*pos*/  2500,  -380, -7740),
     MACRO_OBJECT               (/*preset*/ macro_box_1up_running_away,        /*yaw*/   0, /*pos*/ -2700,  2100, -6400),
+    MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  3500,  2150,  3000),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  1022,  1848,  5120),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  2960,  1024,  5140),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  4080,  1024,  5760),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  6260,  1024,  4960),
     MACRO_OBJECT_END(),
 };

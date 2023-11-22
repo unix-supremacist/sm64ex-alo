@@ -26,5 +26,10 @@ const MacroObject lll_seg7_area_2_macro_objs[] = {
     MACRO_OBJECT(/*preset*/ macro_coin_line_horizontal, /*yaw*/  90, /*pos*/   182,  2623, -2529),
     MACRO_OBJECT(/*preset*/ macro_bouncing_fireball_2,  /*yaw*/  25, /*pos*/   740,     0, -1840),
     MACRO_OBJECT(/*preset*/ macro_bouncing_fireball_2,  /*yaw*/ 225, /*pos*/  1420,     0, -1720),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  728,  3176,  -2754),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  1043,  3752,  -2679),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  1078,  4098,  -2269),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  1413,  4062,  -2190),
+	MACRO_OBJECT(/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  662,  3200,  708),
     MACRO_OBJECT_END(),
 };

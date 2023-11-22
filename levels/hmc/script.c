@@ -65,6 +65,14 @@ static const LevelScript script_func_local_4[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -2100,  2100, -7550, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_4), /*bhv*/ bhvStar,                 /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -6500,  2700, -1600, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5), /*bhv*/ bhvStar,                 /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -5000,  3050, -6700, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_6), /*bhv*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -2381,  1630,  4305, /*angle*/ 0, 0, 0, /*behParam*/ 0x06000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -5425,  3050, -8092, /*angle*/ 0, 0, 0, /*behParam*/ 0x07000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ 2598,  -4060, 5592, /*angle*/ 0, 0, 0, /*behParam*/ 0x08000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -2962,  2100, -7294, /*angle*/ 0, 0, 0, /*behParam*/ 0x09000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -1512,  1350, -7840, /*angle*/ 0, 0, 0, /*behParam*/ 0x0A000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ 2512,  2704, 7494, /*angle*/ 0, 0, 0, /*behParam*/ 0x0B000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_NONE, /*pos*/ 3456, 300, 5541,/*angle*/ 0, 0, 0,/*behParam*/ 0x0C040000, /*beh*/ bhvHiddenStar,            /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR, /*pos*/ -5061, 2700, -114, /*angle*/ 0, 0, 0, /*behParam*/ 0x0D000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
     RETURN(),
 };
 

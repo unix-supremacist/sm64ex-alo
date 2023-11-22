@@ -34,5 +34,10 @@ const MacroObject bbh_seg7_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_breakable_box_three_coins, /*yaw*/  45, /*pos*/ -3659,  -204,  4459),
     MACRO_OBJECT               (/*preset*/ macro_jumping_box,               /*yaw*/   0, /*pos*/  -220,  -220,  6140),
     MACRO_OBJECT               (/*preset*/ macro_1up,                       /*yaw*/   0, /*pos*/ -3040,  1120,  5460),
+    MACRO_OBJECT               (/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -220,  -220,  6140),
+	MACRO_OBJECT               (/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/ -1546,  -204,  4813),
+	MACRO_OBJECT               (/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  -800,  -204,  2915),
+	MACRO_OBJECT               (/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/   400,  -204,  3057),
+	MACRO_OBJECT               (/*preset*/ macro_hidden_star_trigger,       /*yaw*/   0, /*pos*/  2026,  -204,  2966),
     MACRO_OBJECT_END(),
 };

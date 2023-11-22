@@ -94,12 +94,15 @@ static const LevelScript script_func_local_2[] = {
 
 static const LevelScript script_func_local_3[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,            /*pos*/ 4900,  2400,   800, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_4), /*bhv*/ bhvHiddenRedCoinStar, /*acts*/ ALL_ACTS),
-#if defined(VERSION_JP) || defined(VERSION_SH)
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 1540,  2160,  2130, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5), /*bhv*/ bhvStar,                 /*acts*/ ALL_ACTS),
-#else
-    OBJECT_WITH_ACTS(/*model*/ MODEL_EXCLAMATION_BOX, /*pos*/ 1540,  2160,  2130, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5) | BPARAM2(EXCLAMATION_BOX_BP_STAR_ACT_1), /*bhv*/ bhvExclamationBox,      /*acts*/ ALL_ACTS),
-#endif
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 5000, -4800,  2500, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_6), /*bhv*/ bhvStar,                 /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 670,  3050,  3315, /*angle*/ 0, 0, 0, /*behParam*/ 0x06000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 5695,  -1866,  -6724, /*angle*/ 0, 0, 0, /*behParam*/ 0x07000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ -6732, 1800, -418, /*angle*/ 0, 0, 0, /*behParam*/ 0x08000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 5175, 1704, 3190, /*angle*/ 0, 0, 0, /*behParam*/ 0x09000000, /*beh*/ bhvStar,                 /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,            /*pos*/ -6931, 1800, 1991, /*angle*/ 0, 0, 0,    /*behParam*/ 0x0A040000, /*beh*/ bhvHiddenStar,            /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 53, 2775, 2724, /*angle*/ 0, 0, 0, /*behParam*/ 0x0B000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
+	OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,            /*pos*/ 1087, 2510, 3798, /*angle*/ 0, 0, 0, /*behParam*/ 0x0C000000, /*beh*/ bhvStar,                 /*acts*/ ALL_ACTS),
     RETURN(),
 };
 

@@ -1,4 +1,4 @@
-#include <PR/ultratypes.h>
+    #include <PR/ultratypes.h>
 
 #include "sm64.h"
 #include "area.h"
@@ -2032,7 +2032,9 @@ s32 cur_obj_wait_then_blink(s32 timeUntilBlinking, s32 numBlinks) {
 
 s32 cur_obj_is_mario_ground_pounding_platform(void) {
     if (gMarioObject->platform == o) {
-        if (gMarioStates[0].action == ACT_GROUND_POUND_LAND) {
+        if (gMarioStates[0].action == ACT_GROUND_POUND_LAND ||
+            gMarioStates[0].action == ACT_SPIN_POUND_LAND   ||
+            gMarioStates[0].action == ACT_WATER_GROUND_POUND_LAND) {
             return TRUE;
         }
     }

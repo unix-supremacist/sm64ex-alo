@@ -3066,7 +3066,6 @@ s16 render_pause_screen(void) {
         case MENU_STATE_PAUSE_SCREEN_COURSE:
             shade_screen();
             render_pause_my_score_coins();
-
 /* Added support for the "Exit course at any time" cheat */
             if ((gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) 
 #ifdef CHEATS_ACTIONS

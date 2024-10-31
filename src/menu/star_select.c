@@ -353,6 +353,7 @@ void print_act_selector_strings(void) {
 #else
         actNameX = get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f);
         //print_menu_generic_string(actNameX, 215, selectedActName);
+#endif
     }
 
 #ifdef VERSION_CN
